@@ -2,15 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-
+#include <string>
 
 
 #define nameLen 20
 #include "stb-master/stb_easy_font.h"
 
-
-
-
+using namespace std;
 
 typedef struct
 {

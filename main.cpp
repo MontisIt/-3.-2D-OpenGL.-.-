@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
+#include <string>
+
 #include <malloc.h>
 
 #include "chain.h"
@@ -11,6 +13,8 @@
 
 
 #define nameLen 20
+
+using namespace std;
 
 LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
 void EnableOpenGL(HWND hwnd, HDC*, HGLRC*);

@@ -54,9 +54,9 @@ void ShowBackground(GLuint textureID){
                                                                          //текстуры
     glBindTexture(GL_TEXTURE_2D, textureID);
 
-    glEnable(GL_ALPHA_TEST);                          // проверка на элементы α-канала
+    //glEnable(GL_ALPHA_TEST);                          // проверка на элементы α-канала
                                                                              //(не обязательно)
-    glAlphaFunc(GL_GREATER, 0.99);                  // задается тип уровня и его
+    //glAlphaFunc(GL_GREATER, 0.99);                  // задается тип уровня и его
                                                                               //числовая граница
     glEnableClientState(GL_VERTEX_ARRAY);   //использование вектора
                                                                             //координат
@@ -69,7 +69,7 @@ void ShowBackground(GLuint textureID){
                                                                                  //текстурных координат
         glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 
-    glDisable(GL_ALPHA_TEST); //отключение проверки α-канал
+   // glDisable(GL_ALPHA_TEST); //отключение проверки α-канал
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glPopMatrix();

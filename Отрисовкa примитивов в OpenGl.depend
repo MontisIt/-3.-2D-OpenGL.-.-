@@ -101,12 +101,13 @@
 	<intrin.h>
 	<arm_neon.h>
 
-1712241008 source:d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\main.cpp
+1712384461 source:d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\main.cpp
 	<windows.h>
 	<gl/gl.h>
 	<stdio.h>
 	<stdlib.h>
 	<vector>
+	<string>
 	<malloc.h>
 	"chain.h"
 	"textur.h"
@@ -115,11 +116,12 @@
 1712053917 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\chain.h
 	"function_main.cpp"
 
-1712058162 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\function_main.cpp
+1712384442 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\function_main.cpp
 	<gl/gl.h>
 	<stdio.h>
 	<stdlib.h>
 	<malloc.h>
+	<string>
 	"stb-master/stb_easy_font.h"
 
 1674029754 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\stb-master\stb_easy_font.h
@@ -146,7 +148,7 @@
 1712238803 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.h
 	"textur.cpp"
 
-1712242211 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.cpp
+1712327156 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.cpp
 	<gl/gl.h>
 	<math.h>
 	<stdio.h>
@@ -187,7 +189,7 @@
 1712067835 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.h
 	"Hero.cpp"
 
-1712242675 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.cpp
+1712384441 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.cpp
 	<gl/gl.h>
 	<windows.h>
 	<math.h>
