@@ -188,12 +188,13 @@ void MouseDown()
     {
     case 0:
         //window=0;
-        if (gameState==0) gameState=1;
-        printf("%s\n",name);
+        window=0;
+        Menu_Clear();
+
         break;
 
     case 1:
-        if (gameState==1) gameState=0;
+
         window=1;
         Menu_Clear();
         init_Sprite_sheet();
@@ -203,6 +204,7 @@ void MouseDown()
     case 2:
         window=2;
         Menu_Clear();
+        init_Sprite_sheet();
         break;
 
     case 3:

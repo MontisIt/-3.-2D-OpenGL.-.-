@@ -82,7 +82,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
     LoadTexture("Mummy.png",&player, GL_REPEAT, GL_REPEAT,GL_NEAREST);
     LoadTexture("Mummy.png",&sprait, GL_REPEAT, GL_REPEAT,GL_NEAREST);
-   //LoadTexture("background2.png", &background, GL_REPEAT, GL_REPEAT, GL_LINEAR);
+    LoadTexture("Map.jpg", &background, GL_REPEAT, GL_REPEAT, GL_NEAREST);
     init_Buttons_menu();
 
     while (!bQuit)
@@ -107,33 +107,55 @@ int WINAPI WinMain(HINSTANCE hInstance,
            glClearColor(0.0f, 0.5f, 0.5f, 0.0f);//очистка окна от предыдущего окна
            glClear(GL_COLOR_BUFFER_BIT);//очистка ...
 
-           if(window==-1){
-                glLoadIdentity();
-                glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
-                Menu_ShowMenu();
-           }
-           else if(window==1){
-                glLoadIdentity();
-                glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
-                Menu_ShowMenu();
-                glLoadIdentity();
-                glOrtho(-50, rct.right,  -50, rct.bottom,  1, -1);
-                ShowBackground(sprait);
-           }
-           else if(window == 2){
+            switch (window)
+            {
+                case -1:
+                    glLoadIdentity();
+                    glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
+                    Menu_ShowMenu();
+                    break;
 
-                glClear(GL_COLOR_BUFFER_BIT);
-                //glFlush();
-                //glLoadIdentity();
-                //glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
+                case 1:
+                    glLoadIdentity();
+                    glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
+                    Menu_ShowMenu();
+                    glLoadIdentity();
+                    glOrtho(-50, rct.right,  -50, rct.bottom,  1, -1);
+                    ShowBackground(sprait);
+                    break;
 
-                //ShowBackground(background);
+                case 2:
 
-                Player_Move();
+                    glClear(GL_COLOR_BUFFER_BIT);
+                    Menu_ShowMenu();
 
-                Sprite_animation(player, frame, hero.frameLine, hero.posX, hero.posY, hero.lookRight);
 
-           }
+                    Player_Move();
+
+                    Sprite_animation(player, frame, hero.frameLine, hero.posX, hero.posY, hero.lookRight);
+
+                    break;
+
+                case 0:
+
+                    glClear(GL_COLOR_BUFFER_BIT);
+                    Menu_ShowMenu();
+                    //glFlush();
+                    //glLoadIdentity();
+                    //glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
+                    glLoadIdentity();
+                    glOrtho(0, rct.right, 0, rct.bottom,  1, -1);
+                    ShowMap(background);
+                    glLoadIdentity();
+                    glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
+                    Player_Move();
+
+                    Sprite_animation(player, frame, hero.frameLine, hero.posX, hero.posY, hero.lookRight);
+
+                    break;
+
+            }
+
 
 
            SwapBuffers(hDC);//смена кадра
@@ -181,11 +203,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         width=LOWORD(lParam);
         height=HIWORD(lParam);
         glViewport(0,0,width,height);
-       // glLoadIdentity();
-        //float p;
-        //p=width/(float)height;
-        //glOrtho(0, p, -p, 0, 1, -1);
-        //glOrtho(-p,p,-1,1, -1,1);*/
 
     break;
 
@@ -254,8 +271,6 @@ void Menu_ShowMenu()
 {
 
     glPushMatrix();
-        //glLoadIdentity();//сбрасывает матрицу обратно в состояние по умолчанию
-        //glOrtho(-1,1,1,-1,0,1);//создает "Наклонную" проекцию,ось влевом верхнем углу экрана
         for(int i=0; i<btnCnt; i++)   ShowButton(i);
     glPopMatrix();
 }

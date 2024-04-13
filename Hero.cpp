@@ -25,7 +25,7 @@ class Hero
     float velocity = 2.5;
     float jumpHeight=-10.0;
     float gravity=23.0;
-    float posX=512.0;
+    float posX=100.0;
     float posY=100.0;
     bool isOnFloor = true;
     bool lookRight = true;
@@ -36,29 +36,33 @@ Hero hero;
 
 float frame;
 
-int collisionMap[10][16] = {
+int collisionMap[14][16] = {
     { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    { 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-    { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1},
-    { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1},
+    { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 
 };
 
 float checkCollisionHorizontal(float deltaX, float deltaY, int side){
-    int x = floor((hero.posX + 0 + deltaX)/50);
-    int y = floor((hero.posY + 111 + deltaY)/50);
-    if(collisionMap[y][x] == 2){
+    int x = floor((hero.posX + deltaX)/50);
+    int y = floor((hero.posY + deltaY)/50);
+    /*if(collisionMap[y][x+1] == 2){
         printf("%s\n", "hh");
         collisionMap[y][x] = 0;
 
-    }
-    if(collisionMap[y][x+side] == 0 || collisionMap[y][x+side] == 2){
+    }*/
+    if(collisionMap[y][x+side] == 0){
         return hero.velocity;
     } else {
         return 0;
@@ -66,40 +70,48 @@ float checkCollisionHorizontal(float deltaX, float deltaY, int side){
 }
 
 int checkCollisionVertical(float deltaX, float deltaY, int side){
-    int x = floor((hero.posX - 0 + deltaX)/50);
-    int y = floor((hero.posY + 0 + deltaY)/50);
-    for(int i = 1; i <= 1; i++){
-        if (collisionMap[y][x] == 2){
+    int x = floor((hero.posX + deltaX)/50);
+    int y = floor((hero.posY + deltaY)/50);
+
+        /*if (collisionMap[y][x] == 2){
             printf("%s\n", "vv");
             collisionMap[y][x] = 0;
 
 
-        } else if(collisionMap[y][x] == 1 || collisionMap[y][x+1] == 1 ){
+        }*/
+         if(collisionMap[y][x] == 1 || collisionMap[y][x+1] == 1 ){
             return 1;
-        } else if(collisionMap[y][x] == 0 ){
+        }
+        else if(collisionMap[y][x] == 0 && collisionMap[y][x+1] == 1 ){
+            return 1;
+        }
+        else if(collisionMap[y][x] == 0 && collisionMap[y-1][x] == 1 ){
+            return 1;
+        }
+        else if(collisionMap[y][x] == 0){
             return 0;
         } else {
             return -1;
         }
-    }
+
 }
 
 
 void Player_Move(){
 
 
-    if(checkCollisionVertical(75,150,0) != 1 && checkCollisionVertical(75,150,1) != 2){
+    if(checkCollisionVertical(80,150,0) != 1 && checkCollisionVertical(80,150,1) != 2){
         hero.posY+=hero.gravity/2;
     } else {
         hero.isOnFloor = true;
     }
 
-    if (GetKeyState(VK_UP) < 0 && hero.isOnFloor == true && checkCollisionVertical(75,150,LEFT) == 1 ){
+    if (GetKeyState(VK_UP) < 0 && hero.isOnFloor == true && checkCollisionVertical(80,150,LEFT) == 1 ){
 
         hero.jumpHeight = 50;
-       hero.isOnFloor=false;
+        hero.isOnFloor=false;
         hero.frameLine = JUMP;
-        //frame >= 9 ? frame=0 : frame+=0.2;
+
     }
 
     if (GetKeyState(VK_RIGHT) < 0 ){
