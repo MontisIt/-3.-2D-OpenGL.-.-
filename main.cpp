@@ -83,6 +83,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     LoadTexture("Mummy.png",&player, GL_REPEAT, GL_REPEAT,GL_NEAREST);
     LoadTexture("Mummy.png",&sprait, GL_REPEAT, GL_REPEAT,GL_NEAREST);
     LoadTexture("Map.jpg", &background, GL_REPEAT, GL_REPEAT, GL_NEAREST);
+    LoadTexture("pngwing.png", &wing, GL_REPEAT, GL_REPEAT, GL_NEAREST);
     init_Buttons_menu();
 
     while (!bQuit)
@@ -146,6 +147,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
                     glLoadIdentity();
                     glOrtho(0, rct.right, 0, rct.bottom,  1, -1);
                     ShowMap(background);
+                    glTranslated(350,225,0);
+                    ShowWing(wing);
                     glLoadIdentity();
                     glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
                     Player_Move();

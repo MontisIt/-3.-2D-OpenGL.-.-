@@ -107,6 +107,39 @@ void ShowMap(GLuint textureID){
     glPopMatrix();
 }
 
+void ShowWing(GLuint textureID){
+
+    static float svertix[]= {0,0, 150,0,150,150, 0,150};        //вектор текстурируемого
+                                                                    //многоугольника
+    static float TexCord[]= {0,1, 1,1, 1,0, 0,0};    // текстурные координаты
+
+    glPushMatrix();
+                                                                    //изображения
+    glEnable(GL_TEXTURE_2D);                     //разрешение использования
+                                                                         //текстуры
+    glBindTexture(GL_TEXTURE_2D, textureID);
+
+    glEnable(GL_ALPHA_TEST);                          // проверка на элементы α-канала
+                                                                             //(не обязательно)
+    glAlphaFunc(GL_GREATER, 0.99);                  // задается тип уровня и его
+                                                                              //числовая граница
+    glEnableClientState(GL_VERTEX_ARRAY);   //использование вектора
+                                                                            //координат
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY); //использование
+                                                                        //вектора текстурных координат
+            //glLoadIdentity();
+            //glOrtho(0, rct.right, 0,rct.bottom, 1, -1);
+        glVertexPointer(2, GL_FLOAT, 0, svertix);       //используем вектор координат
+        glTexCoordPointer(2, GL_FLOAT, 0, TexCord);  //используем вектор
+                                                                                 //текстурных координат
+        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+
+    glDisable(GL_ALPHA_TEST); //отключение проверки α-канал
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glPopMatrix();
+}
+
 void Sprite_animation(GLuint texture, int n, int frameLine, float posX, float posY, bool lookRight)
 {
     float svertix[]= {0+posX,0+posY, 80+posX,0+posY, 80+posX,80+posY, 0+posX,80+posY};   //(ЛВх,ЛВу)(ПВх,ПВу)(ПНх,ПНу)(ЛНх,ЛНу) //вектор текстурируемого многоугольника
