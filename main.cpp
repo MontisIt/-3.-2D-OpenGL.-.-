@@ -12,6 +12,7 @@
 #include "Hero.h"
 
 
+
 #define nameLen 20
 
 using namespace std;
@@ -146,14 +147,24 @@ int WINAPI WinMain(HINSTANCE hInstance,
                     //glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
                     glLoadIdentity();
                     glOrtho(0, rct.right, 0, rct.bottom,  1, -1);
+
                     ShowMap(background);
-                    glTranslated(350,225,0);
-                    ShowWing(wing);
+
                     glLoadIdentity();
                     glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
+
+                    LoadWing();
+
+                    //glLoadIdentity();
+                   // glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
                     Player_Move();
 
                     Sprite_animation(player, frame, hero.frameLine, hero.posX, hero.posY, hero.lookRight);
+
+                    rectangle(hero.posX,hero.posY,5,5,1,1,1);
+                    rectangle(hero.posX+80,hero.posY,5,5,1,1,1);
+                    rectangle(hero.posX,hero.posY+80,5,5,1,1,1);
+                    rectangle(hero.posX+80,hero.posY+80,5,5,1,1,1);
 
                     break;
 

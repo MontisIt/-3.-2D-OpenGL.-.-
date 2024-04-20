@@ -13,5 +13,5 @@ void ShowBackground(GLuint textureID);
 void ShowMap(GLuint textureID);
 void ShowWing(GLuint textureID);
 void Sprite_animation(GLuint texture, int n, int frameLine, float posX, float posY, bool lookRight);
-
+void rectangle(float x,float y,float width,float height,GLfloat red,GLfloat green,GLfloat blue);
 #endif // TEXTUR_H

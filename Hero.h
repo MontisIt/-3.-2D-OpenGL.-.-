@@ -14,6 +14,8 @@
 
 
 
+
+void LoadWing();
 void Player_Move();
 //float checkCollisionHorizontal(float deltaX, float deltaY, int side);
 //int checkCollisionVertical(float deltaX, float deltaY, int side);

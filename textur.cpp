@@ -15,6 +15,7 @@ typedef struct
 {
     float left, right, top, bottom;
 } spriteCoord;
+
 spriteCoord vrtcoord;
 
 
@@ -107,11 +108,12 @@ void ShowMap(GLuint textureID){
     glPopMatrix();
 }
 
-void ShowWing(GLuint textureID){
+void ShowWing(GLuint textureID,GLfloat posX,GLfloat posY){
 
-    static float svertix[]= {0,0, 150,0,150,150, 0,150};        //вектор текстурируемого
+    float svertix[]= {0+posX,0+posY, 145+posX,0+posY, 145+posX,80+posY, 0+posX,80+posY};
+    //static float svertix[]= {0,0, 110,0,110,80, 0,80};        //вектор текстурируемого
                                                                     //многоугольника
-    static float TexCord[]= {0,1, 1,1, 1,0, 0,0};    // текстурные координаты
+    static float TexCord[]= {1,0, 0,0, 0,1, 1,1};    // текстурные координаты
 
     glPushMatrix();
                                                                     //изображения
@@ -195,3 +197,20 @@ void Sprite_animation(GLuint texture, int n, int frameLine, float posX, float po
     glPopMatrix();
    glBindTexture(GL_TEXTURE_2D, 0);
 }
+
+void rectangle(float x,float y,float width,float height,GLfloat red,GLfloat green,GLfloat blue)
+{
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor3f(red,green,blue); //цвет
+    float arr[8]={x,y,x+width,y,x+width,y+height,x,y+height};
+    glPushMatrix(); //матрицу в стек
+    glVertexPointer(2, GL_FLOAT, 0, arr); //запись координат в VBO
+    glEnableClientState(GL_VERTEX_ARRAY); //разрешение
+    glDrawArrays(GL_TRIANGLE_FAN, 0, 4); //отрисовка кнопки
+    glLineWidth(1); // толщина обводки кнопки
+    glDrawArrays(GL_LINE_LOOP,0,4); //отрисовка обводки
+    glLoadIdentity();
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glPopMatrix();//не влияет на цвета
+}
+

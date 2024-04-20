@@ -1,107 +1,5 @@
 # depslib dependency file v1.0
-1710598290 source:d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl\main.c
-	<windows.h>
-	<gl/gl.h>
-	<stdio.h>
-	<stdlib.h>
-	<malloc.h>
-	"../stb-master/stb_easy_font.h"
-	"../stb-master/stb_image.h"
-
-1674029754 d:\university\Компьютерная графика\2 лб\stb-master\stb_easy_font.h
-	<stdlib.h>
-	<math.h>
-
-1674029754 d:\university\Компьютерная графика\2 лб\stb-master\stb_image.h
-	"stb_image.h"
-	<stdio.h>
-	<stdlib.h>
-	<stdarg.h>
-	<stddef.h>
-	<stdlib.h>
-	<string.h>
-	<limits.h>
-	<math.h>
-	<stdio.h>
-	<assert.h>
-	<stdint.h>
-	<emmintrin.h>
-	<intrin.h>
-	<arm_neon.h>
-
-1710950287 source:d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl\main.cpp
-	<windows.h>
-	<gl/gl.h>
-	<stdio.h>
-	<stdlib.h>
-	<vector>
-	<malloc.h>
-	"function_main.cpp"
-	"../stb-master/stb_easy_font.h"
-	"../stb-master/stb_image.h"
-
-1710679354 d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl\menu.cpp
-	<gl/gl.h>
-	<stdio.h>
-	<stdlib.h>
-	<malloc.h>
-	"menu.h"
-	"../stb-master/stb_easy_font.h"
-
-1677459004 d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl\menu.h
-
-1710950239 d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl\function_main.cpp
-	<gl/gl.h>
-	<stdio.h>
-	<stdlib.h>
-	<malloc.h>
-	"../stb-master/stb_easy_font.h"
-	"../stb-master/stb_image.h"
-
-1711032859 source:d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\main.cpp
-	<windows.h>
-	<gl/gl.h>
-	<stdio.h>
-	<stdlib.h>
-	<vector>
-	<malloc.h>
-	"chain.h"
-	"stb-master/stb_easy_font.h"
-	"stb-master/stb_image.h"
-
-1710950646 d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\chain.h
-	"function_main.cpp"
-
-1711025795 d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\function_main.cpp
-	<gl/gl.h>
-	<stdio.h>
-	<stdlib.h>
-	<malloc.h>
-	"stb-master/stb_easy_font.h"
-	"stb-master/stb_image.h"
-
-1674029754 d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\stb-master\stb_easy_font.h
-	<stdlib.h>
-	<math.h>
-
-1674029754 d:\university\Компьютерная графика\2 лб\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\stb-master\stb_image.h
-	"stb_image.h"
-	<stdio.h>
-	<stdlib.h>
-	<stdarg.h>
-	<stddef.h>
-	<stdlib.h>
-	<string.h>
-	<limits.h>
-	<math.h>
-	<stdio.h>
-	<assert.h>
-	<stdint.h>
-	<emmintrin.h>
-	<intrin.h>
-	<arm_neon.h>
-
-1713109588 source:d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\main.cpp
+1713620593 source:d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\main.cpp
 	<windows.h>
 	<gl/gl.h>
 	<stdio.h>
@@ -128,6 +26,19 @@
 	<stdlib.h>
 	<math.h>
 
+1713437046 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.h
+	"textur.cpp"
+
+1713603113 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.cpp
+	<gl/gl.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<malloc.h>
+	"stb-master/stb_image.h"
+
 1674029754 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\stb-master\stb_image.h
 	"stb_image.h"
 	<stdio.h>
@@ -145,51 +56,10 @@
 	<intrin.h>
 	<arm_neon.h>
 
-1713109197 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.h
-	"textur.cpp"
-
-1713109177 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.cpp
-	<gl/gl.h>
-	<math.h>
-	<stdio.h>
-	<stdlib.h>
-	<iostream>
-	<string>
-	<malloc.h>
-	"stb-master/stb_image.h"
-
-1712055203 source:d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.cpp
-	<gl/gl.h>
-	<stdio.h>
-	<stdlib.h>
-	<malloc.h>
-	"../stb-master/stb_image.h"
-
-1674029754 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\stb-master\stb_image.h
-	"stb_image.h"
-	<stdio.h>
-	<stdlib.h>
-	<stdarg.h>
-	<stddef.h>
-	<stdlib.h>
-	<string.h>
-	<limits.h>
-	<math.h>
-	<stdio.h>
-	<assert.h>
-	<stdint.h>
-	<emmintrin.h>
-	<intrin.h>
-	<arm_neon.h>
-
-1674029754 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\stb-master\stb_easy_font.h
-	<stdlib.h>
-	<math.h>
-
-1712067835 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.h
+1713496667 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.h
 	"Hero.cpp"
 
-1713109627 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.cpp
+1713626466 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.cpp
 	<gl/gl.h>
 	<windows.h>
 	<math.h>
@@ -198,6 +68,6 @@
 	<iostream>
 	<string>
 	<malloc.h>
-	"Hero.h"
 	<time.h>
+	"Hero.h"
 
