@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1713620593 source:d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\main.cpp
+1715264369 source:d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\main.cpp
 	<windows.h>
 	<gl/gl.h>
 	<stdio.h>
@@ -29,7 +29,7 @@
 1713437046 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.h
 	"textur.cpp"
 
-1713603113 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.cpp
+1715264514 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\textur.cpp
 	<gl/gl.h>
 	<math.h>
 	<stdio.h>
@@ -59,7 +59,7 @@
 1713496667 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.h
 	"Hero.cpp"
 
-1713626466 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.cpp
+1715317643 d:\university\Компьютерная графика\Отрисовкa примитивов в opengl. 2d Текстурированние\Отрисовкa примитивов в opengl\hero.cpp
 	<gl/gl.h>
 	<windows.h>
 	<math.h>

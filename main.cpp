@@ -82,6 +82,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
     GetClientRect(hwnd,&rct);
 
     LoadTexture("Mummy.png",&player, GL_REPEAT, GL_REPEAT,GL_NEAREST);
+    //GL_NEAREST-¬озвращает значение элемента текстуры, ближайшего к центру текстурируемого пиксел€.
+    //GL_REPEAT приводит к тому, что целочисленна€ часть координаты игнорируетс€;
     LoadTexture("Mummy.png",&sprait, GL_REPEAT, GL_REPEAT,GL_NEAREST);
     LoadTexture("Map.jpg", &background, GL_REPEAT, GL_REPEAT, GL_NEAREST);
     LoadTexture("pngwing.png", &wing, GL_REPEAT, GL_REPEAT, GL_NEAREST);
@@ -150,8 +152,17 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
                     ShowMap(background);
 
-                    glLoadIdentity();
+                    glLoadIdentity();//‘ункци€ glLoadIdentity замен€ет текущую матрицу матрицей идентификации.
+                    //‘ункци€ glOrtho умножает текущую матрицу на орфографическую матрицу.
                     glOrtho(0, rct.right, rct.bottom, 0,  1, -1);
+                    /*
+                    0- оординаты левой вертикальной плоскости отсечени€.
+                    rct.right- оординаты дл€ вертикальной плоскости обрезки.
+                    rct.bottom- оординаты нижней горизонтальной плоскости отсечени€.
+                    0- оординаты дл€ верхних горизонтальных планов отсечени€.
+                    1-–ассто€ни€ до ближайшей плоскости отсечени€ глубины. Ёто рассто€ние отрицательное, если самолет находитс€ позади зрител€.
+                    -1-–ассто€ни€ до более дальнего плоскости отсечени€ глубины. Ёто рассто€ние отрицательное, если самолет находитс€ позади зрител€.
+                    */
 
                     LoadWing();
 
@@ -162,9 +173,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
                     Sprite_animation(player, frame, hero.frameLine, hero.posX, hero.posY, hero.lookRight);
 
                     rectangle(hero.posX,hero.posY,5,5,1,1,1);
-                    rectangle(hero.posX+80,hero.posY,5,5,1,1,1);
+                    rectangle(hero.posX+76,hero.posY,5,5,1,1,1);
                     rectangle(hero.posX,hero.posY+80,5,5,1,1,1);
-                    rectangle(hero.posX+80,hero.posY+80,5,5,1,1,1);
+                    rectangle(hero.posX+76,hero.posY+80,5,5,1,1,1);
 
                     break;
 

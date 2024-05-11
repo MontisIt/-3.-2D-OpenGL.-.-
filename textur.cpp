@@ -29,16 +29,34 @@ void LoadTexture(char *filename, GLuint *textureID, GLfloat swarp, GLfloat twarp
                                                         //директории проекта
     glGenTextures(1, textureID);            //генерация текстуры
     glBindTexture(GL_TEXTURE_2D, *textureID);//Функция glBindTexture позволяет создать именованную текстуру, привязанную к целевому объекту текстуры.
-
-    glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,swarp); //настройки Задает параметры текстуры.
+    //настройки Задает параметры текстуры.Целевая текстура, которая должна быть либо GL_TEXTURE_1D, либо GL_TEXTURE_2D.
+    glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,swarp);
     glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,twarp);
     glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,filter);
     glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,filter);
+    /*
+    GL_TEXTURE_MIN_FILTER-Функция минификации текстур используется всякий раз, когда текстурируемый пиксель сопоставляется с областью,
+                                превышающей один элемент текстуры.
+    GL_TEXTURE_MAG_FILTER-Функция увеличения текстуры используется, когда текстурируемый пиксель сопоставляется с областью,
+                            меньшей или равной одному элементу текстуры.
+    GL_TEXTURE_WRAP_S-Задает для параметра wrap для координат текстуры значение GL_CLAMP или GL_REPEAT. GL_CLAMP приводит к тому,
+                    что координаты прижаты к диапазону [0,1]
+                    и полезны для предотвращения упаковки артефактов при сопоставлении одного изображения с объектом.
+    GL_TEXTURE_WRAP_T -Задает параметру wrap для координаты текстуры t значение GL_CLAMP или GL_REPEAT.
+         */
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, twidth, thight,
                  0, tcnt == 4 ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, data);//Функция glTexImage2D указывает двухмерное изображение текстуры.
-
+    /*
+    0-Номер уровня детализации. Уровень 0 — базовый уровень образа.
+    GL_RGBA - Количество компонентов цвета в текстуре. Должно быть 1, 2, 3 или 4 или одна из следующих символьных констант
+    0-Ширина границы. Должно быть либо 0, либо 1.
+    tcnt-Формат данных пикселей. Это может предположить одно из девяти символьных значений.
+    GL_UNSIGNED_BYTE-Тип данных пиксельных данных.
+    */
+    /*Функция glBindTexture позволяет создать именованную текстуру, привязанную к целевому объекту текстуры.*/
     glBindTexture(GL_TEXTURE_2D, 0);//задание текстуры
+
     stbi_image_free(data);//освобождение буфера
 
 }
@@ -81,7 +99,7 @@ void ShowMap(GLuint textureID){
                                                                     //многоугольника
     static float TexCord[]= {0,1, 1,1, 1,0, 0,0};    // текстурные координаты
 
-    glPushMatrix();
+
                                                                     //изображения
     glEnable(GL_TEXTURE_2D);                     //разрешение использования
                                                                          //текстуры
@@ -105,17 +123,17 @@ void ShowMap(GLuint textureID){
    // glDisable(GL_ALPHA_TEST); //отключение проверки α-канал
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-    glPopMatrix();
+
 }
 
 void ShowWing(GLuint textureID,GLfloat posX,GLfloat posY){
 
-    float svertix[]= {0+posX,0+posY, 145+posX,0+posY, 145+posX,80+posY, 0+posX,80+posY};
+    float svertix[]= {0+posX,0+posY, 115+posX,0+posY, 115+posX,80+posY, 0+posX,80+posY};
     //static float svertix[]= {0,0, 110,0,110,80, 0,80};        //вектор текстурируемого
                                                                     //многоугольника
     static float TexCord[]= {1,0, 0,0, 0,1, 1,1};    // текстурные координаты
 
-    glPushMatrix();
+
                                                                     //изображения
     glEnable(GL_TEXTURE_2D);                     //разрешение использования
                                                                          //текстуры
@@ -139,7 +157,7 @@ void ShowWing(GLuint textureID,GLfloat posX,GLfloat posY){
     glDisable(GL_ALPHA_TEST); //отключение проверки α-канал
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-    glPopMatrix();
+
 }
 
 void Sprite_animation(GLuint texture, int n, int frameLine, float posX, float posY, bool lookRight)
